@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Layout, Button } from 'antd';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import { login, change } from '../../Action/login';
 import './index.less';
 
 export default class Login extends Component {
@@ -10,12 +9,6 @@ export default class Login extends Component {
     labelArray: ['button', 'checkbox']
   }
   componentWillMount () {
-    // const info = {
-    // 	name: 'Jack',
-    // 	age: 20,
-    // 	id: '001'
-    // };
-    // sessionStorage.setItem('jackInfo', JSON.stringify(info));
   }
   nameChange = (value) => {
     this.props.change({ name: value });
@@ -42,9 +35,5 @@ export default class Login extends Component {
   }
 }
 Login.propTypes = {
-  // cancelInfo: PropTypes.object,
-  // isAuth: PropTypes.bool.isRequired,
-  // itemList: PropTypes.array.isRequired,
-  // fetchUser: PropTypes.func.isRequired,
   change: PropTypes.func.isRequired
 };

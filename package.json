@@ -4,17 +4,7 @@
   "description": "a react scaffold which includes redux、react-router、webpack、es6",
   "main": "./js/index.js",
   "scripts": {
-    "clean": "rimraf dist",
-    "test": "cross-env NODE_ENV=test mocha",
-    "coverage": "cross-env NODE_ENV=test istanbul cover ./node_modules/.bin/_mocha",
-    "build-analyze:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress --profile --colors --json > analyze.json",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js --progress --profile --colors",
-    "build-analyze": "npm-run-all clean build-analyze:webpack",
-    "build": "npm-run-all clean build:webpack",
-    "build-dev:webpack": "cross-env NODE_ENV=development webpack --config webpack.config-dev.js --watch --progress --colors",
-    "build-dev": "npm-run-all clean build-dev:webpack",
-    "start": "cross-env NODE_ENV=development node devServer",
-    "lint:style": "stylelint \"src/**/*.less\" --syntax less"
+    "start": "cross-env NODE_ENV=development node devServer"
   },
   "repository": {
     "type": "git",

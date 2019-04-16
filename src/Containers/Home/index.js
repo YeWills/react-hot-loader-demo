@@ -1,7 +1,5 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Home from './Home.js';
-// import { demoSetState, change } from '../../Action/index';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,7 +8,6 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    // change: bindActionCreators(change, dispatch)
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

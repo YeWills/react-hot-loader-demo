@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import QueueAnim from 'rc-queue-anim';
 import { login } from '../../Action/login';
 import './index.less';
-import svgIcon from '../../Static/Svg/adminIcon.svg';
 import DemoItem from '../../Component/DemoComponent';
 
 
@@ -24,30 +20,28 @@ class Home extends Component {
     abc:999
   }
   componentDidCatch (error, info) {
-    // eslint-disable-next-line no-console
     console.log(info);
-    // eslint-disable-next-line no-console
     console.log(error);
   }
   addDataList = (e) => this.setState( ({dataList}) => ({ dataList: [...dataList, {
     key: dataList.length+1, num: dataList.length+1
   }] }) )
 
-  login = () => this.props.login();
+  login = () => this.props.login(this.props.history);
   login1 = () => {
     this.setState({abc:this.state.abc+1})
   };
 
   render () {
-    console.log(1);
-    // eslint-disable-next-line no-console
+    console.log(11112);
     return (
       <div className='login-style' >
-        <button onClick={this.login1}>add++ {this.state.abc}</button>
+        <button onClick={this.login}>login9999</button>
+        <button onClick={this.login1}>addeeeeqee+ {this.state.abc}</button>
         <div>{this.state.abc}</div>
         <div className='top-icon'>
           {
-            this.state.dataList.map((item) => <DemoItem index={item.key} num={item.num}/>)
+            this.state.dataList.map((item,i) => <DemoItem key={i} index={item.key} num={item.num}/>)
           }
         </div>
       </div>
@@ -62,11 +56,3 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
-// Home.propTypes = {
-// 	history: PropTypes.object
-// 	cancelInfo: PropTypes.object,
-// 	memo: PropTypes.string.isRequired,
-// 	itemList: PropTypes.array.isRequired,
-// 	fetchUser: PropTypes.func.isRequired,
-// 	demoSetState: PropTypes.func.isRequired
-// };

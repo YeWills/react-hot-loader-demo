@@ -67,7 +67,7 @@ const isDeveloping = !isProduction;
  */
 devMiddleware.waitUntilValid(() => {
   // when env is testing, don't need open it
- 	opn('http://localhost:5000', {app: ['google chrome']});
+ 	// opn('http://localhost:5000', {app: ['google chrome']});
   	_resolve()
 });
 /**
