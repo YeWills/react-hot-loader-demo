@@ -1,13 +1,11 @@
-// import React from 'react';
-// import Immutable from 'immutable';
 import types from '../Store/types';
 import { reducerCreators } from '../Util/index';
-// import { createReducer } from 'redux-immutablejs';
 
 const initialState = {
   name: '',
   password: '',
   token: '',
+  testa: 123,
 };
 
 export default reducerCreators(initialState, {
@@ -26,6 +24,9 @@ export default reducerCreators(initialState, {
   },
   [`${types.LOGIN}_PENDING`]: (state, data, params) => {
     return state;
+  },
+  testAction:(state,data,params)=>{
+    return {...state, testa:data}
   }
 
 });

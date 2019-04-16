@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { login } from '../../Action/login';
 import './index.less';
@@ -27,18 +26,23 @@ class Home extends Component {
     key: dataList.length+1, num: dataList.length+1
   }] }) )
 
+  homeA = () => {
+    const numO = this.props.addRedux;
+    this.props.addRedux && this.props.addRedux.testa && this.props.homeA(this.props.addRedux.testa+1)
+  };
   login = () => this.props.login(this.props.history);
-  login1 = () => {
+  click = () => {
     this.setState({abc:this.state.abc+1})
   };
 
   render () {
-    console.log(11112);
     return (
       <div className='login-style' >
-        <button onClick={this.login}>login9999</button>
-        <button onClick={this.login1}>addeeeeqee+ {this.state.abc}</button>
+        <button onClick={this.login}>login</button>
+        <button onClick={this.homeA}>homeA</button>
+        <button onClick={this.click}>setState {this.state.abc}</button>
         <div>{this.state.abc}</div>
+        <div>{this.props.addRedux && this.props.addRedux.testa}</div>
         <div className='top-icon'>
           {
             this.state.dataList.map((item,i) => <DemoItem key={i} index={item.key} num={item.num}/>)
@@ -49,10 +53,20 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = (state) => {
+  return {addRedux:state.Login}
+};
 
 const mapDispatchToProps = (dispatch) => ({
-  login: bindActionCreators(login, dispatch)
+  homeA: (num)=>{
+    dispatch({
+      type:'testAction',
+      payload:num
+    })
+  },
+  login: (history)=>{
+    login(history)(dispatch);
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

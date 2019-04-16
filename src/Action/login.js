@@ -1,5 +1,4 @@
 import types from '../Store/types';
-import { get_login } from '../Api/index';
 import { newAPi } from '../Api/index';
 
 export function login (history) {
@@ -23,14 +22,6 @@ export function login (history) {
         )
       }
     });
-    // dispatch({
-    //   type: types.LOGIN,
-    //   payload: {
-    //     promise: get_login(params).then((data) => {
-    //       return data;
-    //     })
-    //   }
-    // });
   };
 }
 export function change (param) {
