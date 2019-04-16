@@ -27,7 +27,6 @@ class Home extends Component {
   }] }) )
 
   homeA = () => {
-    const numO = this.props.addRedux;
     this.props.addRedux && this.props.addRedux.testa && this.props.homeA(this.props.addRedux.testa+1)
   };
   login = () => this.props.login(this.props.history);
@@ -38,9 +37,9 @@ class Home extends Component {
   render () {
     return (
       <div className='login-style' >
-        <button onClick={this.login}>login</button>
-        <button onClick={this.homeA}>homeA</button>
-        <button onClick={this.click}>setState {this.state.abc}</button>
+        <button onClick={this.login}>login--></button>
+        <button onClick={this.homeA}>homeA-->props</button>
+        <button onClick={this.click}>setState-->state</button>
         <div>{this.state.abc}</div>
         <div>{this.props.addRedux && this.props.addRedux.testa}</div>
         <div className='top-icon'>
