@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/jay0815/react_from_zero#readme",
   "dependencies": {
+    "@hot-loader/react-dom": "^16.8.6",
     "antd": "^3.8.0",
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",

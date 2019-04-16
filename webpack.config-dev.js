@@ -28,6 +28,11 @@ module.exports = {
 			'redux-thunk',
 		]
 	},
+	resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+},
 	output: {
 		path: path.join(__dirname, 'dist'),
 		publicPath: '/',
