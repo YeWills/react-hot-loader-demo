@@ -5,6 +5,23 @@ import './index.less';
 import DemoItem from '../../Component/DemoComponent';
 
 
+const mapStateToProps = (state) => {
+  return {addRedux:state.Login}
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  homeA: (num)=>{
+    dispatch({
+      type:'testAction',
+      payload:num
+    })
+  },
+  login: (history)=>{
+    login(history)(dispatch);
+  },
+})
+
+@connect(mapStateToProps, mapDispatchToProps)
 class Home extends Component {
   state = {
     dataList : [
@@ -38,7 +55,7 @@ class Home extends Component {
     return (
       <div className='login-style' >
         <button onClick={this.login}>login--></button>
-        <button onClick={this.homeA}>homeA-->props</button>
+        <button onClick={this.homeA}>homeA-258->props</button>
         <button onClick={this.click}>setState-->state</button>
         <div>{this.state.abc}</div>
         <div>{this.props.addRedux && this.props.addRedux.testa}</div>
@@ -52,20 +69,6 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {addRedux:state.Login}
-};
 
-const mapDispatchToProps = (dispatch) => ({
-  homeA: (num)=>{
-    dispatch({
-      type:'testAction',
-      payload:num
-    })
-  },
-  login: (history)=>{
-    login(history)(dispatch);
-  },
-})
+export default Home;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
