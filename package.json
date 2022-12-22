@@ -63,7 +63,7 @@
     "ignore-styles": "^5.0.1",
     "immutable": "^3.8.2",
     "json-loader": "^0.5.7",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "key-mirror": "^1.0.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
